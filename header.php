@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>poupe</title>
-    <link rel="stylesheet" href="/style/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         * {
@@ -20,16 +20,17 @@
             background-color: #f0f0f0;
         }
 
+        .logo {
+            width: 100px;
+            height: 50px;
+            margin-top: -11px;
+        }
+
+
         .container {
             margin: 0 auto;
             width: 940px;
-        }
-
-        header {
-            position: relative;
-            background-color: rgb(114, 146, 104);
-            height: 70px;
-            padding: 12px 10px 25px;
+            margin-bottom: 100px;
         }
 
         .conteudo {
@@ -37,6 +38,12 @@
             flex-direction: row;
             padding: 50px;
         }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
 
         .conteudoinfo {
             display: flex;
@@ -50,9 +57,68 @@
         }
 
         header {
-            background-color: rgb(114, 146, 104);
+            background-color: #333;
             height: 50px;
             padding: 12px 10px 25px;
+        }
+
+        .slider input {
+            display: none;
+        }
+
+        .slider {
+            display: block;
+            height: 293px;
+            width: 600px;
+            margin: auto;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .slider li {
+            list-style: none;
+            position: absolute;
+        }
+
+        .slider img {
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .slider label {
+            background-color: #000;
+            bottom: 10px;
+            cursor: pointer;
+            display: block;
+            height: 10px;
+            position: absolute;
+            width: 10px;
+            z-index: 10;
+        }
+
+        .slider li:nth-child(1) label {
+            left: 10px;
+        }
+
+        .slider li:nth-child(2) label {
+            left: 40px;
+        }
+
+        .slider li:nth-child(3) label {
+            left: 70px;
+        }
+
+        .slider img {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .slider li input:checked~img {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
         }
 
         h1,
@@ -94,13 +160,40 @@
             justify-content: space-between;
         }
 
-        footer {
-            background-color: rgb(163, 163, 163);
-            bottom: 0;
-            position: absolute;
-            height: 1px;
+        #chart_div {
             width: 100%;
-            padding: 7px 15px 85px 15px;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(163, 163, 163);
+            padding: 20px;
             text-align: center;
         }
 
@@ -111,24 +204,26 @@
 
         #menu a {
             text-decoration: none;
-            padding: 20px 25px;
+            padding: 15px 25px;
             color: #e3e3e3;
             text-shadow: 1px 2px 1px #111;
         }
 
         #menu a:hover {
-            background-color: #44b4b8;
+            background-color: #DB7093;
         }
     </style>
+
+
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="?pagina=home"><img src="img/logo.jpg" title="Logo" alt="Logo" class="logo"></a>
+            <a href="?pagina=home"><img src="img/logo.png" title="Logo" alt="Logo" class="logo"></a>
             <div id="menu">
-                <a href="?pagina=despesas">Cadastro Despesas</a>
-                <a href="?pagina=categorias">Cadastro categorias
+                <a href="?pagina=despesas">Despesas</a>
+                <a href="?pagina=categorias">categorias
                 </a>
                 <a href="?pagina=grafico">Grafico
                 </a>
